@@ -3,7 +3,7 @@
 - Скорректировать тесты
 
 ### Project
-- [https://anton-sergeenkov.github.io/React-ArrowGame/](https://anton-sergeenkov.github.io/React-ArrowGame/)
+- [https://letscode-dev.github.io/react-arrow-game/](https://letscode-dev.github.io/react-arrow-game/)
 
 ### Stack
 - `React` + `Typescript`
