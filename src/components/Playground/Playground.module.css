@@ -2,8 +2,8 @@
   position: relative;
   display: flex;
   gap: 0 var(--spacing-medium);
-	width: 900px;
-	margin: auto;
+  width: 900px;
+  margin: auto;
 }
 .column {
   flex-basis: 50%;

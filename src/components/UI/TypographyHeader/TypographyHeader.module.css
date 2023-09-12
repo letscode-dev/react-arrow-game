@@ -4,7 +4,13 @@
   font-size: 18px;
   color: var(--color-gray-dark);
 
-  background: -webkit-linear-gradient(right bottom,#162454,#533389,#0a9ed8,#7a359f);
+  background: -webkit-linear-gradient(
+    right bottom,
+    #162454,
+    #533389,
+    #0a9ed8,
+    #7a359f
+  );
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;

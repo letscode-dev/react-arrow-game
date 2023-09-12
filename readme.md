@@ -1,14 +1,17 @@
 # Readme
 
 ### TODO
+
 - Prettier. Добавить форматирование по save
 - Скорректировать тесты
 - Проверить рефакторинг приложения
 
 ### Project
+
 - [https://letscode-dev.github.io/react-arrow-game/](https://letscode-dev.github.io/react-arrow-game/)
 
 ### Stack
+
 - `React` + `Typescript`
 - `Redux` + `Redux Toolkit`
 - `Material UI`

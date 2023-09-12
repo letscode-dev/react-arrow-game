@@ -1,6 +1,7 @@
 import cn from "classnames"
 
-import { Button as MaterialButton, ButtonProps } from "@mui/material"
+import { ButtonProps } from "@mui/material"
+import MaterialButton from "@mui/material/Button"
 
 import styles from "./Button.module.css"
 
