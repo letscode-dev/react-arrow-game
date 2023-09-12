@@ -1,8 +1,6 @@
 import { useAppSelector } from "../../../../app/hooks"
 import { MAP_ARROW_CODES, IMapArrowCodes, EMOJI } from "../../constants"
 
-import { TypographyText, TypographyHeader } from "../../../UI"
-
 import styles from "./KeyPressed.module.css"
 
 const KeyPressed: React.FC = () => {
@@ -22,15 +20,12 @@ const KeyPressed: React.FC = () => {
 
   return (
     <>
-      <TypographyHeader>Key pressed</TypographyHeader>
-
+      <h3 className="headerText">Key pressed</h3>
       <div className={styles.container}>
-        <TypographyText>
-          Press the key corresponding to the key in "Random keys"
-        </TypographyText>
-        <div className={styles.wrapper}>
-          <span className={styles.icon}>{getKeyPressedElement()}</span>
-        </div>
+        <p>
+          {EMOJI.ARROW} Press the key corresponding to the key in "Random keys"
+        </p>
+        <span className={styles.icon}>{getKeyPressedElement()}</span>
       </div>
     </>
   )

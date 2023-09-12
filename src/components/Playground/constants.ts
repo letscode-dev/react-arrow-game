@@ -17,10 +17,12 @@ export const ARR_ARROW_CODES = Object.keys(MAP_ARROW_CODES)
 export const INTERVAL_TIME: number = 4000
 
 interface IEmoji {
+  ARROW: string
   TIME: string
 }
 
 export const EMOJI: IEmoji = {
+  ARROW: "›",
   TIME: "🕓",
 }
 

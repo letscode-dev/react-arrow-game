@@ -1,17 +1,8 @@
-import { useState, useEffect, useCallback, useRef } from "react"
+import { useState, useEffect, useCallback } from "react"
 
 import { useAppSelector, useAppDispatch } from "../../app/hooks"
-import {
-  setCurrentStep,
-  setSteps,
-  setEnteredValue,
-  setUnsuccess,
-} from "./store/slices"
-import {
-  MAP_ARROW_CODES,
-  END_GAME_CONDITIONS,
-  INTERVAL_TIME,
-} from "./constants"
+import { setEnteredValue, setTimer, setAsync } from "./store/slices"
+import { MAP_ARROW_CODES, END_GAME_CONDITIONS } from "./constants"
 
 import Modal from "./components/Modal"
 import Controls from "./components/Controls"
@@ -26,19 +17,16 @@ const Playground = () => {
   const state = useAppSelector((state) => state.playground)
   const dispatch = useAppDispatch()
 
-  const refreshIntervalId = useRef<ReturnType<typeof setInterval> | null>(null)
-
-  const [isTimerActive, setIsTimerActive] = useState<boolean>(false)
   const [isShowModal, setIsShowModal] = useState<boolean>(false)
   const [isSuccessEndGame, setIsSuccessEndGame] = useState<boolean>(false)
 
   const handleKeyDown = useCallback(
     (e: KeyboardEvent) => {
-      if (MAP_ARROW_CODES.hasOwnProperty(e.key) && isTimerActive) {
+      if (MAP_ARROW_CODES.hasOwnProperty(e.key) && state.isTimer) {
         dispatch(setEnteredValue(e.key))
       }
     },
-    [dispatch, isTimerActive],
+    [dispatch, state.isTimer],
   )
 
   useEffect(() => {
@@ -50,20 +38,8 @@ const Playground = () => {
   }, [handleKeyDown])
 
   useEffect(() => {
-    if (isTimerActive) {
-      refreshIntervalId.current = setInterval(() => {
-        dispatch(setUnsuccess())
-        dispatch(setCurrentStep())
-        dispatch(setSteps())
-      }, INTERVAL_TIME)
-    } else {
-      clearInterval(refreshIntervalId.current as NodeJS.Timeout)
-    }
-
-    return () => {
-      clearInterval(refreshIntervalId.current as NodeJS.Timeout)
-    }
-  }, [isTimerActive, dispatch, state])
+    state.isTimer && dispatch(setAsync())
+  }, [state.isTimer, dispatch])
 
   useEffect(() => {
     const isSuccessful =
@@ -76,9 +52,9 @@ const Playground = () => {
 
     if (isSuccessful || isUnsuccessful) {
       setIsShowModal(true)
-      setIsTimerActive(false)
+      dispatch(setTimer(false))
     }
-  }, [state.totalSuccessful, state.totalUnsuccessful])
+  }, [state.totalSuccessful, state.totalUnsuccessful, dispatch])
 
   return (
     <div className={styles.container}>
@@ -90,18 +66,10 @@ const Playground = () => {
 
       <div className={styles.column}>
         <Description />
-        <Controls
-          isTimerActive={isTimerActive}
-          setIsTimerActive={setIsTimerActive}
-        />
+        <Controls />
       </div>
 
-      {isShowModal && (
-        <Modal
-          isSuccessEndGame={isSuccessEndGame}
-          setIsShowModal={setIsShowModal}
-        />
-      )}
+      {isShowModal && <Modal isSuccessEndGame={isSuccessEndGame} />}
     </div>
   )
 }

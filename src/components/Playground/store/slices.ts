@@ -15,19 +15,40 @@ export const playgroundSlice = createSlice({
   name: "playground",
   initialState,
   reducers: {
+    setUnsuccess: (state) => {
+      if (state.isTimer && state.currentStep > 0) {
+        const enteredValue = state.steps[state.currentStep - 1].enteredValue
+
+        if (enteredValue === null) {
+          state.totalUnsuccessful += 1
+          state.totalSuccessful = 0
+          state.steps[state.currentStep - 1] = {
+            ...state.steps[state.currentStep - 1],
+            success: false,
+          }
+        }
+      }
+    },
+
     setCurrentStep: (state) => {
-      state.currentStep += 1
+      state.isTimer && (state.currentStep += 1)
     },
 
     setSteps: (state) => {
-      const randomKey = Math.floor(Math.random() * ARR_ARROW_CODES.length)
+      if (state.isTimer) {
+        const randomKey = Math.floor(Math.random() * ARR_ARROW_CODES.length)
 
-      state.steps.push({
-        step: state.currentStep,
-        currentValue: ARR_ARROW_CODES[randomKey],
-        enteredValue: null,
-        success: null,
-      })
+        state.steps.push({
+          step: state.currentStep,
+          currentValue: ARR_ARROW_CODES[randomKey],
+          enteredValue: null,
+          success: null,
+        })
+      }
+    },
+
+    setTimer: (state, action) => {
+      state.isTimer = action.payload
     },
 
     setEnteredValue: (state, action) => {
@@ -53,32 +74,18 @@ export const playgroundSlice = createSlice({
       }
     },
 
-    setUnsuccess: (state) => {
-      if (state.currentStep > 0) {
-        const enteredValue = state.steps[state.currentStep - 1].enteredValue
-
-        if (enteredValue === null) {
-          state.totalUnsuccessful += 1
-          state.totalSuccessful = 0
-
-          state.steps[state.currentStep - 1] = {
-            ...state.steps[state.currentStep - 1],
-            success: false,
-          }
-        }
-      }
-    },
-
-    resetStore: () => initialState,
+    // for Saga only
+    setAsync: () => {},
   },
 })
 
 export const {
-  setCurrentStep,
-  setSteps,
   setEnteredValue,
+  setSteps,
+  setTimer,
   setUnsuccess,
-  resetStore,
+  setCurrentStep,
+  setAsync,
 } = playgroundSlice.actions
 
 export default playgroundSlice.reducer

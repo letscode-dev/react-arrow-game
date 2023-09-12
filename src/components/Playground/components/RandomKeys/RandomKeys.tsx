@@ -1,10 +1,8 @@
 import cn from "classnames"
 
 import { useAppSelector } from "../../../../app/hooks"
-import { MAP_ARROW_CODES, IMapArrowCodes } from "../../constants"
+import { MAP_ARROW_CODES, IMapArrowCodes, EMOJI } from "../../constants"
 import { IPlaygroundStepsState } from "../../store/types"
-
-import { TypographyText, TypographyHeader } from "../../../UI"
 
 import styles from "./RandomKeys.module.css"
 
@@ -21,18 +19,15 @@ const RandomKeys: React.FC = () => {
 
   return (
     <>
-      <TypographyHeader>Random keys</TypographyHeader>
-
+      <h3 className="headerText">Random keys</h3>
       {state.steps.length ? (
-        <div className={styles.wrapper}>
-          {state.steps.map((element) => (
-            <span className={getStylesRandomKeys(element)} key={element.step}>
-              {MAP_ARROW_CODES[element.currentValue as keyof IMapArrowCodes]}
-            </span>
-          ))}
-        </div>
+        state.steps.map((element, index) => (
+          <span className={getStylesRandomKeys(element)} key={element.step}>
+            {MAP_ARROW_CODES[element.currentValue as keyof IMapArrowCodes]}
+          </span>
+        ))
       ) : (
-        <TypographyText>Press "Play" to start the game</TypographyText>
+        <p>{EMOJI.ARROW} Press "Play" to start the game</p>
       )}
     </>
   )
