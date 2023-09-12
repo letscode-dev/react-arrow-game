@@ -1,15 +1,130 @@
 .container {
   position: relative;
   display: flex;
-  gap: 0 var(--spacing-medium);
-	width: 900px;
+  gap: 0 5px;
+	max-width: 1200px;
 	margin: auto;
+  background-color: #ececec;
+  box-shadow:
+    0 16px 24px 2px  rgba(33, 37, 41, .02), 
+    0 6px  30px 5px  rgba(33, 37, 41, .04), 
+    0 8px  10px -5px rgba(33, 37, 41, .1);
 }
-.column {
+.columns {
   flex-basis: 50%;
-  padding: var(--spacing-large);
-  border: 1px solid var(--color-yellow-darker);
-  border-radius: var(--border-radius);
-  box-shadow: var(--box-shadow);
+  padding: 20px;
   background-color: #fff;
+}
+.headerText {
+  margin: 0;
+  margin-bottom: 10px;
+  font-size: 18px;
+  color: #595959;
+}
+.containerKeyPressed {
+  margin-bottom: 10px;
+}
+
+.icon {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 55px;
+  height: 55px;
+  margin: 10px;
+  font-size: 20px;
+  border: 1px solid #acacac;
+  border-radius: 50%;
+  background-color: #e3e3e3;
+}
+.iconSuccess {
+  border: 1px solid #09d216;
+  background-color: #d1ebd3;
+}
+.iconUnsuccess {
+  border: 1px solid #d67d7d;
+  background-color: #f1e0d6;
+}
+
+.button {
+  padding: 0 16px;
+  line-height: 36px;
+  border: none;
+  border-radius: 18px;
+  cursor: pointer;
+  background: none;
+  background-color: #212121;
+  color: #fff;
+  transition: background-color .7s;
+}
+.button:hover {
+  background-color: #515151;
+}
+.button:disabled {
+  background-color: #999999;
+  cursor: auto;
+}
+
+.formButton {
+  min-width: 100px;
+  margin-right: 10px;
+}
+.formButton:last-child {
+  margin-right: 0;
+}
+
+.list {
+  margin: 0;
+  padding: 0;
+  padding-left: 16px;
+}
+.list li::marker {
+  color: #a5a5a5;
+}
+.listItemSuccess {
+  color: #0fb81a;
+}
+.listItemUnsuccess {
+  color: #e06363;
+}
+
+.modal {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(2px);
+}
+.modalContainer {
+  width: 300px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 3px;
+  box-shadow:
+    0 16px 24px 2px  rgba(33, 37, 41, .02), 
+    0 6px  30px 5px  rgba(33, 37, 41, .04), 
+    0 8px  10px -5px rgba(33, 37, 41, .1);
+}
+.modalContent {
+  margin-bottom: 20px;
+}
+.modalButton {
+  display: block;
+  margin: 0 auto;
+}
+.modalContainerSuccess {
+  border: 1px solid #7de087;
+  background-color: #b3e9b8;
+}
+.modalContainerUnsuccess {
+  border: 1px solid #e69d9d;
+  background-color: #dfb8b8;
+}
+.modalParagraph {
+  margin: 0;
+  text-align: center;
 }

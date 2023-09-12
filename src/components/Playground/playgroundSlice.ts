@@ -1,14 +1,26 @@
 import { createSlice } from "@reduxjs/toolkit"
 
-import { ARR_ARROW_CODES } from "../constants"
-import { IPlaygroundState } from "./types"
+import { ARR_ARROW_CODES } from "./constants"
 
-export const initialState: IPlaygroundState = {
+export interface IPlaygroundStepsState {
+  step: number
+  currentValue: string | null
+  enteredValue: string | null
+  success: boolean | null
+}
+
+export interface IPlaygroundState {
+  currentStep: number
+  steps: IPlaygroundStepsState[]
+  totalSuccessful: number
+  totalUnsuccessful: number
+}
+
+const initialState: IPlaygroundState = {
   currentStep: 0,
-  isTimer: false,
+  steps: [],
   totalSuccessful: 0,
   totalUnsuccessful: 0,
-  steps: [],
 }
 
 export const playgroundSlice = createSlice({
@@ -53,13 +65,11 @@ export const playgroundSlice = createSlice({
       }
     },
 
-    setUnsuccess: (state) => {
+    setSuccess: (state) => {
       if (state.currentStep > 0) {
         const enteredValue = state.steps[state.currentStep - 1].enteredValue
-
         if (enteredValue === null) {
           state.totalUnsuccessful += 1
-          state.totalSuccessful = 0
 
           state.steps[state.currentStep - 1] = {
             ...state.steps[state.currentStep - 1],
@@ -75,9 +85,9 @@ export const playgroundSlice = createSlice({
 
 export const {
   setCurrentStep,
-  setSteps,
   setEnteredValue,
-  setUnsuccess,
+  setSteps,
+  setSuccess,
   resetStore,
 } = playgroundSlice.actions
 
