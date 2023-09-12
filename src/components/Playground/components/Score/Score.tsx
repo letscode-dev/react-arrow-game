@@ -1,8 +1,5 @@
 import { useAppSelector } from "../../../../app/hooks"
-
-import { Chip, Stack } from "@mui/material"
-
-import { TypographyText, TypographyHeader } from "../../../UI"
+import { EMOJI } from "../../constants"
 
 import styles from "./Score.module.css"
 
@@ -11,38 +8,21 @@ const Score: React.FC = () => {
 
   return (
     <>
-      <TypographyHeader>Score</TypographyHeader>
-
-      <TypographyText>
-        On error, the "Consecutive successful hits" value is reset to zero
-      </TypographyText>
-
-      <Stack direction="row" spacing={1}>
-        <Chip
-          className={styles.chipUnsuccess}
-          variant="outlined"
-          label={
-            <>
-              Errors:
-              <span className={styles.chipCounter}>
-                {state.totalUnsuccessful}
-              </span>
-            </>
-          }
-        />
-        <Chip
-          className={styles.chipSuccessful}
-          variant="outlined"
-          label={
-            <>
-              Successful:{" "}
-              <span className={styles.chipCounter}>
-                {state.totalSuccessful}
-              </span>
-            </>
-          }
-        />
-      </Stack>
+      <h3 className="headerText">Score</h3>
+      <p>
+        {EMOJI.ARROW} On error, the "Consecutive successful hits" value is reset
+        to zero
+      </p>
+      <ul className={styles.list}>
+        <li>
+          Consecutive successful hits:{" "}
+          <b className={styles.listItemSuccess}>{state.totalSuccessful}</b>
+        </li>
+        <li>
+          Errors:{" "}
+          <b className={styles.listItemUnsuccess}>{state.totalUnsuccessful}</b>
+        </li>
+      </ul>
     </>
   )
 }

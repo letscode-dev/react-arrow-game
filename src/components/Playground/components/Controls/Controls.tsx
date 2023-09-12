@@ -1,37 +1,31 @@
-import PlayArrowIcon from "@mui/icons-material/PlayArrow"
-import PauseIcon from "@mui/icons-material/Pause"
+import cn from "classnames"
 
-import { Button } from "../../../UI"
+import { useAppSelector, useAppDispatch } from "../../../../app/hooks"
+import { setTimer } from "../../store/slices"
 
 import styles from "./Controls.module.css"
 
-export interface IControlsProps {
-  isTimerActive: boolean
-  setIsTimerActive: React.Dispatch<React.SetStateAction<boolean>>
-}
-
-const Controls: React.FC<IControlsProps> = (props) => {
-  const { isTimerActive, setIsTimerActive } = props
+const Controls: React.FC = () => {
+  const state = useAppSelector((state) => state.playground)
+  const dispatch = useAppDispatch()
 
   return (
-    <div className={styles.wrapper}>
-      <Button
-        endIcon={<PlayArrowIcon />}
-        onClick={() => setIsTimerActive(true)}
-        disabled={isTimerActive}
-        className={styles.formButton}
+    <>
+      <button
+        className={cn("button", styles.formButton)}
+        onClick={() => dispatch(setTimer(true))}
+        disabled={state.isTimer}
       >
         Play
-      </Button>
-      <Button
-        endIcon={<PauseIcon />}
-        onClick={() => setIsTimerActive(false)}
-        disabled={!isTimerActive}
-        className={styles.formButton}
+      </button>
+      <button
+        className={cn("button", styles.formButton)}
+        onClick={() => dispatch(setTimer(false))}
+        disabled={!state.isTimer}
       >
         Pause
-      </Button>
-    </div>
+      </button>
+    </>
   )
 }
 

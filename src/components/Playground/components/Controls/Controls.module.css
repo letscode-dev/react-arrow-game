@@ -1,5 +1,5 @@
-
 .formButton {
+  min-width: 100px;
   margin-right: 10px;
 }
 .formButton:last-child {

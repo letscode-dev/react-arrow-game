@@ -1,13 +1,14 @@
-.chipSuccessful {
-  border-color: var(--color-green-dark);
+.list {
+  margin: 0;
+  padding: 0;
+  padding-left: 16px;
+}
+.list li::marker {
+  color: var(--color-gray-medium);
+}
+.listItemSuccess {
   color: var(--color-green-dark);
 }
-.chipUnsuccess {
-  border-color: var(--color-red-dark);
+.listItemUnsuccess {
   color: var(--color-red-dark);
-}
-.chipCounter {
-  display: inline-block;
-  margin-left: 3px;
-  font-weight: 600;
 }

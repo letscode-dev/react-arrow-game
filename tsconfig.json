@@ -14,7 +14,6 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx",
-    "jsxImportSource": "@emotion/react",
     "types": ["testing-library__jest-dom"]
   },
   "include": ["src"],
