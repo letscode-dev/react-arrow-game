@@ -1,6 +1,8 @@
 ### TODO
+- Prettier. Добавить форматирование по save
 - Перенести репозиторий в LetsCode
 - Скорректировать тесты
+- Проверить рефакторинг приложения
 
 ### Project
 - [https://letscode-dev.github.io/react-arrow-game/](https://letscode-dev.github.io/react-arrow-game/)
