@@ -2,7 +2,6 @@
 
 ### TODO
 
-- Husky Pre commit https://typicode.github.io/husky/
 - Скорректировать тесты
 - Проверить рефакторинг приложения
 
