@@ -1,25 +1,10 @@
-import { useAppSelector } from "../../../../app/hooks"
-import { MAP_ARROW_CODES } from "../../constants"
-import { IMapArrowCodes } from "../../types"
-
+import { useKeyPressedElement } from "./hooks"
 import { TypographyText, TypographyHeader } from "../../../UI"
 
 import styles from "./KeyPressed.module.css"
 
 const KeyPressed: React.FC = () => {
-  const state = useAppSelector((state) => state.playground)
-
-  const getKeyPressedElement = () => {
-    if (state.steps.length) {
-      const enteredValue = state.steps[state.steps.length - 1].enteredValue
-
-      if (enteredValue) {
-        return MAP_ARROW_CODES[enteredValue as keyof IMapArrowCodes]
-      }
-    }
-
-    return "🕓"
-  }
+  const keyPressedElement = useKeyPressedElement()
 
   return (
     <>
@@ -30,7 +15,7 @@ const KeyPressed: React.FC = () => {
           Press the key corresponding to the key in "Random keys"
         </TypographyText>
         <div className={styles.wrapper}>
-          <span className={styles.icon}>{getKeyPressedElement()}</span>
+          <span className={styles.icon}>{keyPressedElement}</span>
         </div>
       </div>
     </>
