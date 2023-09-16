@@ -1,13 +1,15 @@
 import cn from "classnames"
 
-import { ButtonProps } from "@mui/material"
-import MaterialButton from "@mui/material/Button"
+import {
+  Button as MaterialButton,
+  ButtonProps as MaterialButtonProps,
+} from "@mui/material"
 
 import styles from "./Button.module.css"
 
-export interface IControlsProps extends ButtonProps {}
+export interface IButtonProps extends MaterialButtonProps {}
 
-const Button: React.FC<IControlsProps> = (props) => {
+const Button: React.FC<IButtonProps> = (props) => {
   const { children, className = "" } = props
 
   return (

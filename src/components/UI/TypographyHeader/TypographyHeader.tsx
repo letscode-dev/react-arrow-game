@@ -2,12 +2,12 @@ import cn from "classnames"
 
 import {
   Typography as MaterialTypography,
-  TypographyProps,
+  TypographyProps as MaterialTypographyProps,
 } from "@mui/material"
 
 import styles from "./TypographyHeader.module.css"
 
-export interface ITypographyHeaderProps extends TypographyProps {}
+export interface ITypographyHeaderProps extends MaterialTypographyProps {}
 
 const TypographyHeader: React.FC<ITypographyHeaderProps> = (props) => {
   const { children, className = "" } = props
