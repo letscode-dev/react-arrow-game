@@ -33,7 +33,9 @@ const RandomKeys: React.FC = () => {
           ))}
         </div>
       ) : (
-        <TypographyText>Press "Play" to start the game</TypographyText>
+        <TypographyText>
+          Press "Play" to start the game and wait for the first arrow to appear
+        </TypographyText>
       )}
     </>
   )

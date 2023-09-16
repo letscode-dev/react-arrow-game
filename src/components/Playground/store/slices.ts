@@ -37,7 +37,7 @@ export const playgroundSlice = createSlice({
 
         if (step.enteredValue === null) {
           state.steps[state.currentStep - 1] = {
-            ...state.steps[state.currentStep - 1],
+            ...step,
             enteredValue: action.payload,
             success: isSuccess,
           }
@@ -54,14 +54,14 @@ export const playgroundSlice = createSlice({
 
     setUnsuccess: (state) => {
       if (state.currentStep > 0) {
-        const enteredValue = state.steps[state.currentStep - 1].enteredValue
+        const step = state.steps[state.currentStep - 1]
 
-        if (enteredValue === null) {
+        if (step.enteredValue === null) {
           state.totalUnsuccessful += 1
           state.totalSuccessful = 0
 
           state.steps[state.currentStep - 1] = {
-            ...state.steps[state.currentStep - 1],
+            ...step,
             success: false,
           }
         }
