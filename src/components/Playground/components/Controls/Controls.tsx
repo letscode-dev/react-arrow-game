@@ -1,5 +1,4 @@
-import PlayArrowIcon from "@mui/icons-material/PlayArrow"
-import PauseIcon from "@mui/icons-material/Pause"
+import { PlayArrow, Pause } from "@mui/icons-material"
 
 import { Button } from "../../../UI"
 
@@ -16,18 +15,18 @@ const Controls: React.FC<IControlsProps> = (props) => {
   return (
     <div className={styles.wrapper}>
       <Button
-        endIcon={<PlayArrowIcon />}
+        endIcon={<PlayArrow />}
         onClick={() => setIsTimerActive(true)}
         disabled={isTimerActive}
-        className={styles.formButton}
+        className={styles.button}
       >
         Play
       </Button>
       <Button
-        endIcon={<PauseIcon />}
+        endIcon={<Pause />}
         onClick={() => setIsTimerActive(false)}
         disabled={!isTimerActive}
-        className={styles.formButton}
+        className={styles.button}
       >
         Pause
       </Button>

@@ -13,9 +13,9 @@ const KeyPressed: React.FC = () => {
     if (state.steps.length) {
       const enteredValue = state.steps[state.steps.length - 1].enteredValue
 
-      return enteredValue
-        ? MAP_ARROW_CODES[enteredValue as keyof IMapArrowCodes]
-        : "🕓"
+      if (enteredValue) {
+        return MAP_ARROW_CODES[enteredValue as keyof IMapArrowCodes]
+      }
     }
 
     return "🕓"
