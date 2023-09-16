@@ -1,7 +1,8 @@
 import cn from "classnames"
 
 import { useAppSelector } from "../../../../app/hooks"
-import { MAP_ARROW_CODES, IMapArrowCodes } from "../../constants"
+import { MAP_ARROW_CODES } from "../../constants"
+import { IMapArrowCodes } from "../../types"
 import { IPlaygroundStepsState } from "../../store/types"
 
 import { TypographyText, TypographyHeader } from "../../../UI"

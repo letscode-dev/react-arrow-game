@@ -1,5 +1,6 @@
 import { useAppSelector } from "../../../../app/hooks"
-import { MAP_ARROW_CODES, IMapArrowCodes, EMOJI } from "../../constants"
+import { MAP_ARROW_CODES } from "../../constants"
+import { IMapArrowCodes } from "../../types"
 
 import { TypographyText, TypographyHeader } from "../../../UI"
 
@@ -14,10 +15,10 @@ const KeyPressed: React.FC = () => {
 
       return enteredValue
         ? MAP_ARROW_CODES[enteredValue as keyof IMapArrowCodes]
-        : EMOJI.TIME
+        : "🕓"
     }
 
-    return EMOJI.TIME
+    return "🕓"
   }
 
   return (
