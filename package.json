@@ -40,7 +40,9 @@
     "eslint-config-react-app": "^7.0.1",
     "eslint-plugin-prettier": "^4.2.1",
     "gh-pages": "^6.0.0",
+    "husky": "^8.0.3",
     "jsdom": "^21.1.0",
+    "lint-staged": "^14.0.1",
     "prettier": "^2.7.1",
     "prettier-config-nick": "^1.0.2",
     "typescript": "^5.0.2",
@@ -60,5 +62,16 @@
       "react/jsx-no-target-blank": "off"
     }
   },
-  "prettier": "prettier-config-nick"
+  "prettier": "prettier-config-nick",
+  "lint-staged": {
+    "**/*.{js,jsx,ts,tsx}": [
+      "npx prettier --write",
+      "npx eslint --fix"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  }
 }
