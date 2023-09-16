@@ -14,7 +14,8 @@
     "type-check": "tsc",
     "gh-pages": "gh-pages -d build",
     "commit": "git add . && git commit -m \"Bash Script Commit\" && git push origin head",
-    "deploy": "npm run build && npm run gh-pages"
+    "deploy": "npm run build && npm run gh-pages",
+    "prepare": "husky install"
   },
   "dependencies": {
     "@emotion/react": "^11.11.1",
@@ -40,7 +41,7 @@
     "eslint-config-react-app": "^7.0.1",
     "eslint-plugin-prettier": "^4.2.1",
     "gh-pages": "^6.0.0",
-    "husky": "^8.0.3",
+    "husky": "^8.0.0",
     "jsdom": "^21.1.0",
     "lint-staged": "^14.0.1",
     "prettier": "^2.7.1",
@@ -68,10 +69,5 @@
       "npx prettier --write",
       "npx eslint --fix"
     ]
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
   }
 }
