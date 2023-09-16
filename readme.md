@@ -14,7 +14,7 @@
 - `React` + `Typescript`
 - `Redux` + `Redux Toolkit`
 - `Material UI`
-- `ESLint` + `Prettier`
+- `ESLint` + `Prettier` + `Husky`
 - `Jest`
 - `Vite`
 - `GitHub Pages`
