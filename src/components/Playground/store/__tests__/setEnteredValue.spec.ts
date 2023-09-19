@@ -14,6 +14,7 @@ describe("reducer setEnteredValue", () => {
       initialState,
       setCurrentStep(),
     )
+
     const setStepsReducerState = playgroundReducer(
       setCurrentStepReducerState,
       setSteps(),
@@ -33,10 +34,12 @@ describe("reducer setEnteredValue", () => {
       initialState,
       setCurrentStep(),
     )
+
     const setStepsReducerState = playgroundReducer(
       setCurrentStepReducerState,
       setSteps(),
     )
+
     const setEnteredValueReducerState = playgroundReducer(
       setStepsReducerState,
       setEnteredValue(setStepsReducerState.steps[0].currentValue),
