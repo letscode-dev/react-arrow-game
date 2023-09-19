@@ -1,9 +1,8 @@
 import cn from "classnames"
-
 import MaterialModal from "@mui/material/Modal"
 
-import { useAppDispatch } from "../../../../app/hooks"
 import { resetStore } from "../../store/slices"
+import { useAppDispatch } from "../../../../app/hooks"
 import { TypographyText, Button } from "../../../UI"
 
 import styles from "./Modal.module.css"

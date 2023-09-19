@@ -1,7 +1,6 @@
-import { useAppSelector } from "../../../../app/hooks"
-
 import { Chip, Stack } from "@mui/material"
 
+import { useAppSelector } from "../../../../app/hooks"
 import { TypographyText, TypographyHeader } from "../../../UI"
 
 import styles from "./Score.module.css"
