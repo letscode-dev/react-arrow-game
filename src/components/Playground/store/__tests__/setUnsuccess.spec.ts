@@ -6,7 +6,7 @@ import playgroundReducer, {
 } from "../slices"
 
 describe("reducer setUnsuccess", () => {
-  it("check totalUnsuccessful", () => {
+  it("check totalUnsuccessful and success", () => {
     const setCurrentStepReducerState = playgroundReducer(
       initialState,
       setCurrentStep(),
