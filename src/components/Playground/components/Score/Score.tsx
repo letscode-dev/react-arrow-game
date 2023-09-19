@@ -23,9 +23,7 @@ const Score: React.FC = () => {
           label={
             <>
               Errors:
-              <span className={styles.chipCounter}>
-                {state.totalUnsuccessful}
-              </span>
+              <span className={styles.counter}>{state.totalUnsuccessful}</span>
             </>
           }
         />
@@ -35,9 +33,7 @@ const Score: React.FC = () => {
           label={
             <>
               Successful:{" "}
-              <span className={styles.chipCounter}>
-                {state.totalSuccessful}
-              </span>
+              <span className={styles.counter}>{state.totalSuccessful}</span>
             </>
           }
         />

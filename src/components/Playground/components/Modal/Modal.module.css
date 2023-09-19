@@ -15,11 +15,11 @@
 .content {
   margin-bottom: 20px;
 }
-.modalButton {
+.button {
   display: block;
   margin: 0 auto;
 }
-.paragraph {
+.message {
   text-align: center;
 }
 .modalSuccess {

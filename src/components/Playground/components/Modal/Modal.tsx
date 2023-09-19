@@ -42,14 +42,11 @@ const Modal: React.FC<IModalProps> = (props) => {
         )}
       >
         <div className={styles.content}>
-          <TypographyText className={styles.paragraph}>
+          <TypographyText className={styles.message}>
             {getResultMessage()}
           </TypographyText>
         </div>
-        <Button
-          className={cn("button", styles.modalButton)}
-          onClick={handleClose}
-        >
+        <Button className={cn("button", styles.button)} onClick={handleClose}>
           Start New Game
         </Button>
       </div>
