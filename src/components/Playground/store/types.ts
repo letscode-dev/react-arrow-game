@@ -7,7 +7,6 @@ export interface IPlaygroundStepsState {
 
 export interface IPlaygroundState {
   currentStep: number
-  isTimer: boolean
   steps: IPlaygroundStepsState[]
   totalSuccessful: number
   totalUnsuccessful: number

@@ -83,7 +83,7 @@ const Playground = () => {
   return (
     <div className={styles.container}>
       <div className={styles.column}>
-        <RandomKeys />
+        <RandomKeys isTimerActive={isTimerActive} />
         <KeyPressed />
         <Score />
       </div>

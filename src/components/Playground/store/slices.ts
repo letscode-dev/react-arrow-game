@@ -5,7 +5,6 @@ import { IPlaygroundState } from "./types"
 
 export const initialState: IPlaygroundState = {
   currentStep: 0,
-  isTimer: false,
   totalSuccessful: 0,
   totalUnsuccessful: 0,
   steps: [],

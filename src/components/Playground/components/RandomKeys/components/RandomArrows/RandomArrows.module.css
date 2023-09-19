@@ -1,0 +1,8 @@
+.iconSuccess {
+  border: 1px solid var(--color-green);
+  background-color: var(--color-green-light);
+}
+.iconUnsuccess {
+  border: 1px solid var(--color-red-light);
+  background-color: var(--color-red-lighter);
+}
