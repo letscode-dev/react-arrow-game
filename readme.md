@@ -14,8 +14,7 @@
 - `Redux` + `Redux Toolkit`
 - `Material UI`
 - `ESLint` + `Prettier` + `Husky`
-- `Jest`
-- `Vite`
+- `Vite`, `Vitest`
 - `GitHub Pages`
 
 ### Порядок импортов
