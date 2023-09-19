@@ -24,7 +24,6 @@ const WelcomeText: React.FC<IWelcomeTextProps> = (props) => {
       <span className={stylesCommon.icon}>
         <img className={styles.loader} src={loader} alt="Loader" />
       </span>
-      <span>Wait!</span>
     </div>
   )
 }
