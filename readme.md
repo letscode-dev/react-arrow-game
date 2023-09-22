@@ -4,12 +4,10 @@
 
 1. Обзор курса
 2. Установка и настройка проекта
-
-- Установка template для Redux Toolkit
-- Настройка ESLint, Prettier
-- Настройка Prettier в VSCode
-- Настройка hook pre-commit с Husky
-
+  - Установка template от Redux Toolkit
+  - Настройка ESLint, Prettier
+  - Настройка Prettier в VSCode
+  - Настройка hook pre-commit с Husky
 3. Написание бизнес-логики на Redux. Написание slices
 4. Декомпозиция по компонентам
 5. Подключение Material-UI и создание UI-Kit
