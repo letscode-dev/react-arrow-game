@@ -1,17 +1,8 @@
-import { useState, useEffect, useCallback, useRef } from "react"
+import { useState, useEffect, useRef } from "react"
 
 import { useAppSelector, useAppDispatch } from "../../app/hooks"
-import {
-  setCurrentStep,
-  setSteps,
-  setEnteredValue,
-  setUnsuccess,
-} from "./store/slices"
-import {
-  MAP_ARROW_CODES,
-  END_GAME_CONDITIONS,
-  INTERVAL_TIME,
-} from "./constants"
+import { setCurrentStep, setSteps, setUnsuccess } from "./store/slices"
+import { END_GAME_CONDITIONS, INTERVAL_TIME } from "./constants"
 
 import Modal from "./components/Modal"
 import Controls from "./components/Controls"
@@ -31,23 +22,6 @@ const Playground = () => {
   const [isTimerActive, setIsTimerActive] = useState<boolean>(false)
   const [isShowModal, setIsShowModal] = useState<boolean>(false)
   const [isSuccessEndGame, setIsSuccessEndGame] = useState<boolean>(false)
-
-  const handleKeyDown = useCallback(
-    (e: KeyboardEvent) => {
-      if (MAP_ARROW_CODES.hasOwnProperty(e.key) && isTimerActive) {
-        dispatch(setEnteredValue(e.key))
-      }
-    },
-    [dispatch, isTimerActive],
-  )
-
-  useEffect(() => {
-    window.addEventListener("keydown", handleKeyDown)
-
-    return () => {
-      window.removeEventListener("keydown", handleKeyDown)
-    }
-  }, [handleKeyDown])
 
   useEffect(() => {
     if (isTimerActive) {
@@ -84,7 +58,7 @@ const Playground = () => {
     <div className={styles.container}>
       <div className={styles.column}>
         <RandomKeys isTimerActive={isTimerActive} />
-        <KeyPressed />
+        <KeyPressed isTimerActive={isTimerActive} />
         <Score />
       </div>
 
