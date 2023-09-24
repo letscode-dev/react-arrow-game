@@ -3,16 +3,26 @@
 ### Темы
 
 1. Обзор курса
-2. Установка и настройка проекта
-  - Установка template от Redux Toolkit
-  - Настройка ESLint, Prettier
-  - Настройка Prettier в VSCode
-  - Настройка hook pre-commit с Husky
-3. Написание бизнес-логики на Redux. Написание slices
-4. Декомпозиция по компонентам
-5. Подключение Material-UI и создание UI-Kit
-6. Написание тестов на Vitest
-7. Деплой на GitHub Pages
+2. Настройка проекта
+
+- Установка template от Redux Toolkit
+- Настройка ESLint, Prettier
+- Настройка Prettier в VSCode
+- Настройка hook pre-commit с Husky
+
+3. Бизнес логика на Redux Toolkit
+
+- Написание reducers
+- Декомпозиция по компонентам
+
+4. Подключение Material-UI и создание UI-Kit
+
+- Подключение Material-UI
+- Создание UI-Kit
+- Стилизация компонентов
+
+5. Написание тестов на Vitest
+6. Деплой на GitHub Pages
 
 ### Project
 
