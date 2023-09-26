@@ -20,6 +20,7 @@ export const playgroundSlice = createSlice({
       const randomKeys = Math.floor(Math.random() * ARR_ARROW_CODES.length)
 
       state.steps.push({
+        step: state.currentStep,
         currentValue: ARR_ARROW_CODES[randomKeys],
         enteredValue: null,
       })
@@ -36,5 +37,6 @@ export const playgroundSlice = createSlice({
   },
 })
 
-export const { setCurrentStep, setSteps } = playgroundSlice.actions
+export const { setCurrentStep, setSteps, setEnteredValue } =
+  playgroundSlice.actions
 export default playgroundSlice.reducer
