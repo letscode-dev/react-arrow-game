@@ -37,7 +37,7 @@ const Playground = () => {
     return () => {
       clearInterval(refreshIntervalId.current as NodeJS.Timeout)
     }
-  }, [isTimerActive, dispatch, state])
+  }, [isTimerActive, dispatch])
 
   useEffect(() => {
     const isSuccessful =

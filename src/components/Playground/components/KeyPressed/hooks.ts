@@ -6,7 +6,7 @@ export const useKeyPressedElement = (): string => {
   const state = useAppSelector((state) => state.playground)
 
   if (state.steps.length) {
-    const enteredValue = state.steps[state.steps.length - 1].enteredValue
+    const enteredValue = state.steps[state.currentStep - 1].enteredValue
 
     if (enteredValue) {
       return MAP_ARROW_CODES[enteredValue as keyof IMapArrowCodes]

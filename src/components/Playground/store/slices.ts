@@ -52,7 +52,7 @@ export const playgroundSlice = createSlice({
     },
 
     setUnsuccess: (state) => {
-      if (state.currentStep > 0) {
+      if (state.steps.length) {
         const step = state.steps[state.currentStep - 1]
 
         if (step.enteredValue === null) {
