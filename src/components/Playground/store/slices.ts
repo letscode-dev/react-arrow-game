@@ -41,9 +41,22 @@ export const playgroundSlice = createSlice({
         }
       }
     },
+
+    setUnsuccess: (state) => {
+      if (state.steps.length) {
+        const step = state.steps[state.currentStep - 1]
+
+        if (step.enteredValue == null) {
+          state.steps[state.currentStep - 1] = {
+            ...step,
+            success: false,
+          }
+        }
+      }
+    },
   },
 })
 
-export const { setCurrentStep, setSteps, setEnteredValue } =
+export const { setCurrentStep, setSteps, setEnteredValue, setUnsuccess } =
   playgroundSlice.actions
 export default playgroundSlice.reducer
