@@ -1,5 +1,18 @@
 # Readme
 
+### Project
+
+- [https://letscode-dev.github.io/react-arrow-game/](https://letscode-dev.github.io/react-arrow-game/)
+
+### Stack
+
+- `React` + `Typescript`
+- `Redux` + `Redux Toolkit`
+- `Material UI`
+- `ESLint` + `Prettier` + `Husky`
+- `Vite`, `Vitest`
+- `GitHub Pages`
+
 ### Темы
 
 1. Обзор курса
@@ -24,19 +37,6 @@
 
 5. Написание тестов на Vitest
 6. Деплой на GitHub Pages
-
-### Project
-
-- [https://letscode-dev.github.io/react-arrow-game/](https://letscode-dev.github.io/react-arrow-game/)
-
-### Stack
-
-- `React` + `Typescript`
-- `Redux` + `Redux Toolkit`
-- `Material UI`
-- `ESLint` + `Prettier` + `Husky`
-- `Vite`, `Vitest`
-- `GitHub Pages`
 
 ### Порядок импортов
 
