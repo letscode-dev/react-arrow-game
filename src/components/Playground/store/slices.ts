@@ -23,15 +23,22 @@ export const playgroundSlice = createSlice({
         step: state.currentStep,
         currentValue: ARR_ARROW_CODES[randomKeys],
         enteredValue: null,
+        success: null,
       })
     },
 
     setEnteredValue: (state, action) => {
-      const step = state.steps[state.currentStep - 1]
+      if (state.steps.length) {
+        const step = state.steps[state.currentStep - 1]
+        const isSuccess = step.currentValue === action.payload
 
-      state.steps[state.currentStep - 1] = {
-        ...step,
-        enteredValue: action.payload,
+        if (step.enteredValue === null) {
+          state.steps[state.currentStep - 1] = {
+            ...step,
+            enteredValue: action.payload,
+            success: isSuccess,
+          }
+        }
       }
     },
   },
