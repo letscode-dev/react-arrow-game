@@ -3,7 +3,9 @@ import MaterialModal from "@mui/material/Modal"
 
 import { resetStore } from "../../store/slices"
 import { useAppDispatch } from "../../../../app/hooks"
+
 import { TypographyText, Button } from "../../../UI"
+import ResultMessage from "./components/ResultMessage"
 
 import styles from "./Modal.module.css"
 
@@ -22,17 +24,6 @@ const Modal: React.FC<IModalProps> = (props) => {
     setIsShowModal(false)
   }
 
-  const getResultMessage = (): React.ReactNode =>
-    isSuccessEndGame ? (
-      <span>
-        Congratulations! <br /> You win!
-      </span>
-    ) : (
-      <span>
-        My regrets. <br /> You have lost this game
-      </span>
-    )
-
   return (
     <MaterialModal open onClose={handleClose} className={styles.wrapper}>
       <div
@@ -43,7 +34,7 @@ const Modal: React.FC<IModalProps> = (props) => {
       >
         <div className={styles.content}>
           <TypographyText className={styles.message}>
-            {getResultMessage()}
+            <ResultMessage isSuccessEndGame={isSuccessEndGame} />
           </TypographyText>
         </div>
         <Button className={cn("button", styles.button)} onClick={handleClose}>
