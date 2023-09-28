@@ -1,0 +1,11 @@
+.chipSuccessful {
+  border-color: var(--color-green-dark);
+  color: var(--color-green-dark);
+}
+.chipUnsuccess {
+  border-color: var(--color-red-dark);
+  color: var(--color-red-dark);
+}
+.counter {
+  font-weight: 600;
+}
