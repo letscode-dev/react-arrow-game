@@ -1,10 +1,22 @@
-// import playgroundReducer, { initialState } from "../slices"
+import playgroundReducer, {
+  initialState,
+  setCurrentStep,
+  setSteps,
+  setUnsuccess,
+} from "../slices"
 
-// describe("reducer setSomeReducer", () => {
-//   it("check setSomeReducer", () => {
-//     const state = playgroundReducer({}, {})
+describe("reducer setUnsuccess", () => {
+  it("check setUnsuccess", () => {
+    const setCurrentStepState = playgroundReducer(
+      initialState,
+      setCurrentStep(),
+    )
 
-//     expect().toEqual()
-//   })
-// })
-// 1
+    const setStepsSate = playgroundReducer(setCurrentStepState, setSteps())
+
+    const setUnsuccessState = playgroundReducer(setStepsSate, setUnsuccess())
+
+    expect(setUnsuccessState.totalUnsuccessful).toBe(1)
+    expect(setUnsuccessState.steps[0].success).toBe(false)
+  })
+})
