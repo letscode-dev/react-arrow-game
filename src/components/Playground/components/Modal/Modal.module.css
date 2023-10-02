@@ -12,16 +12,6 @@
   background-color: #fff;
   box-shadow: var(--box-shadow);
 }
-.content {
-  margin-bottom: 20px;
-}
-.button {
-  display: block;
-  margin: 0 auto;
-}
-.message {
-  text-align: center;
-}
 .modalSuccess {
   border: 1px solid var(--color-green);
   background-color: var(--color-green-light);
@@ -29,4 +19,8 @@
 .modalUnsuccess {
   border: 1px solid var(--color-red-light);
   background-color: var(--color-red-lighter);
+}
+.button {
+  display: block;
+  margin: 0 auto;
 }

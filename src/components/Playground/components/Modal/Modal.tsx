@@ -4,7 +4,7 @@ import { Modal as MaterialModal } from "@mui/material"
 import { resetStore } from "../../store/slices"
 import { useAppDispatch } from "../../../../app/hooks"
 
-import { TypographyText, Button } from "../../../UI"
+import { Button } from "../../../UI"
 import ResultMessage from "./components/ResultMessage"
 
 import styles from "./Modal.module.css"
@@ -32,11 +32,7 @@ const Modal: React.FC<IModalProps> = (props) => {
           isSuccessEndGame ? styles.modalSuccess : styles.modalUnsuccess,
         )}
       >
-        <div className={styles.content}>
-          <TypographyText className={styles.message}>
-            <ResultMessage isSuccessEndGame={isSuccessEndGame} />
-          </TypographyText>
-        </div>
+        <ResultMessage isSuccessEndGame={isSuccessEndGame} />
         <Button className={styles.button} onClick={handleClose}>
           Start New Game
         </Button>
