@@ -1,5 +1,5 @@
 import cn from "classnames"
-import MaterialModal from "@mui/material/Modal"
+import { Modal as MaterialModal } from "@mui/material"
 
 import { resetStore } from "../../store/slices"
 import { useAppDispatch } from "../../../../app/hooks"
@@ -37,7 +37,7 @@ const Modal: React.FC<IModalProps> = (props) => {
             <ResultMessage isSuccessEndGame={isSuccessEndGame} />
           </TypographyText>
         </div>
-        <Button className={cn("button", styles.button)} onClick={handleClose}>
+        <Button className={styles.button} onClick={handleClose}>
           Start New Game
         </Button>
       </div>

@@ -15,7 +15,6 @@ const TypographyHeader: React.FC<ITypographyHeaderProps> = (props) => {
   return (
     <MaterialTypography
       variant="h3"
-      gutterBottom
       {...props}
       className={cn(styles.text, className)}
     >

@@ -2,8 +2,8 @@ import playgroundReducer, { initialState } from "../slices"
 
 describe("initial state", () => {
   it("check initial state", () => {
-    expect(playgroundReducer(undefined, { type: "unknown" })).toEqual(
-      initialState,
-    )
+    const setInitialState = playgroundReducer(undefined, { type: "unknown" })
+
+    expect(setInitialState).toEqual(initialState)
   })
 })
